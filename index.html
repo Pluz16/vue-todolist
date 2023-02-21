@@ -17,19 +17,21 @@
             <h1 class="text-center my-5 fw-bold">La tua Todolist</h1>
           </header>
 
-        <ul class="col-8 container">
+          <main id="root">
+            <section class="container">
+        
+              <div class="row justify-content-center">
+                <div class="col-6">
+        
+            <!-- Input -->
+            <div class="input-group mb-5">
+            <!-- Input Text -->
+            <input class="form-control" placeholder="Cose da fare..." v-model="newTaskText" v-on:keyup.enter="onAddClick">
+            <!-- Btn Aggiungi -->
+            <button class="btn btn-outline-primary" type="button" @click="onAddClick">Aggiungi</button>
+          </div>
 
-            <li class="list-group-item d-flex justify-content-between align-items-start" v-for="(event,index) of todo">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold">{{event.text}}</div>
-                </div>
-            <span class="badge rounded-pill p-2 m-2" :class="(event.done) ? 'bg-success' : 'bg-danger' "
-            @click="eventChecked(index)">{{event.content}}</span>
-            <span class="badge rounded-pill bg-danger" :class="(event.done) ? 'd-inline-block' : 'd-none' "
-            @click="eventChecked(index)">x</span>
-        </li>
-
-        </ul>
+          
 
     </div>
 
