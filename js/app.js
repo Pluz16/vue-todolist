@@ -27,8 +27,29 @@ new Vue ({
     newTaskText: "",
 },
 methods: {
-  onAddClick() {
-    if (this.newTaskText.trim() === "") {
-      return;
-    }
-}
+    onAddClick() {
+      if (this.newTaskText.trim() === "") {
+        return;
+      }
+
+      const foundElement = this.tasksList.some((el) => {
+        return el.text.toLowerCase() === this.newTaskText.trim().toLowerCase();
+      });
+
+      if (foundElement) {
+        return;
+      }
+
+      this.tasksList.push({
+        text: this.newTaskText.trim(),
+      });
+
+      this.newTaskText = "";
+    },
+
+    onDeleteClick(indiceDaCancellare) {
+      this.tasksList.splice(indiceDaCancellare, 1);
+    },
+
+  },
+})

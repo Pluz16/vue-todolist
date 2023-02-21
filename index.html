@@ -31,7 +31,20 @@
             <button class="btn btn-outline-primary" type="button" @click="onAddClick">Aggiungi</button>
           </div>
 
-          
+           <!-- List  -->
+           <div class="list-group">
+            <!-- Elemento -->
+            <div class="list-group-item d-flex align-items-center py-3" v-for="element, i in tasksList">
+              <!-- Test -->
+              <label class="flex-fill">{{ i }} - {{ element.text }}</label>
+              <!-- Btn Cancella -->
+              <button type="button" class="btn-close" aria-label="Close" @click="onDeleteClick(i)"></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     </div>
 
