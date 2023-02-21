@@ -1,0 +1,7 @@
+li span {
+    cursor: pointer;
+}
+
+li {
+    border: 5px black solid;
+}

@@ -14,3 +14,41 @@
 // cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 
 
+const app = Vue.createApp({
+    data() {
+        return {
+
+            todo: [
+                {
+                    text: "cibo cane",
+                    done: false,
+                    content: "X",
+
+                },
+                {
+                    text: "allenamento",
+                    done: true,
+                    content: 'V'
+
+                },
+                {
+                    text: "esercizio pomeridiano",
+                    done: false,
+                    content: "X"
+                }
+            ]
+
+        }
+    },
+
+methods: {
+    eventChecked(i) {
+        if (!this.todo[i].done) {
+            this.todo[i].done = true;
+            this.todo[i].content = "V"
+        }
+    }
+}
+});
+
+app.mount('#app');
